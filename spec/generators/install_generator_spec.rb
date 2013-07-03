@@ -1,5 +1,6 @@
 require 'spec_helper'
-#require 'generators/grape/install_generator'
+require 'rails/version'
+require 'ammeter/init'
 describe EasyTable::Generators::InstallGenerator do
 
   before { run_generator }

@@ -19,7 +19,8 @@ group :test do
   gem 'pry-debugger'
   gem 'ammeter'
 
-  gem 'rspec-rails'
+  #gem 'rspec-rails'
+  gem 'rspec'
   gem 'slim-rails'
   gem 'capybara'
   gem 'hashie'

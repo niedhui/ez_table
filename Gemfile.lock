@@ -150,6 +150,6 @@ DEPENDENCIES
   nokogiri
   pry
   pry-debugger
-  rspec-rails
+  rspec
   slim-rails
   sqlite3

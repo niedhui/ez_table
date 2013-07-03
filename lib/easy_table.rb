@@ -1,5 +1,6 @@
 require 'action_view'
 require 'active_support/core_ext'
+require 'rails/generators'
 module EasyTable
   autoload :Config,               'easy_table/config'
   autoload :ActionViewExtension,  'easy_table/action_view_extension'
