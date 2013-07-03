@@ -13,7 +13,7 @@ module EasyTable
     end
 
     def render
-      content_tag("table") do
+      content_tag("table", class: 'easy-table') do
         trs = "".html_safe
         trs += render_header
         trs += render_body

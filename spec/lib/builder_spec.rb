@@ -9,6 +9,7 @@ module EasyTable
         table.td :name
       end
     end
+
     context "table header" do
       it { should have_xpath("//table/tr/th[text()='id']")}
       it { should have_xpath("//table/tr/th[text()='name']")}
@@ -18,7 +19,10 @@ module EasyTable
       it { should have(2).trs}
       it { should have_xpath("//table/tr/td[text()='1']")}
       it { should have_xpath("//table/tr/td[text()='jack']")}
+    end
 
+    context "table class" do
+      it { should have_tag("table.easy-table")}
     end
 
   end
