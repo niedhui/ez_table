@@ -21,6 +21,9 @@ RSpec.configure do |config|
 
   config.before :each do
     EasyTable::Engine.initializers.each(&:run)
+    EasyTable::Config.configure do |t_config|
+      t_config.table_html = {class: 'easy-table table table-bordered'}
+    end
   end
 
   # Run specs in random order to surface order dependencies. If you find an

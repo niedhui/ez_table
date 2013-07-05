@@ -10,6 +10,10 @@ module EasyTable
   module Generators
     autoload :InstallGenerator, 'easy_table/generators/install_generator'
   end
+
+  def self.config
+    EasyTable::Config
+  end
 end
 
 require 'easy_table/engine'

@@ -3,13 +3,12 @@ module EasyTable
     attr_reader :view, :table
     delegate :content_tag, to: :view
 
-    def initialize(table)
-      @table = table
-      @view = table.view
+    def initialize(table, view)
+      @table, @view = table, view
     end
 
     def render
-      content_tag("table", class: 'easy-table') do
+      content_tag("table", Config.table_html) do
         trs = "".html_safe
         trs += render_header
         trs += render_body
@@ -17,27 +16,31 @@ module EasyTable
     end
 
     def render_header
-      content_tag("tr") do
-        ths = "".html_safe
-        table.attributes.each do |attr|
-          ths += content_tag("th", attr)
+      content_tag("thead") do
+        content_tag("tr") do
+          ths = "".html_safe
+          table.attributes.each do |attr|
+            ths += content_tag("th", table.model_class.human_attribute_name(attr))
+          end
+          ths
         end
-        ths
       end
     end
 
     def render_body
-      tbodys = "".html_safe
-      table.items.each do |item|
-        tbodys += content_tag("tr") do
-          tds = "".html_safe
-          table.attributes.each do |attr|
-            tds += content_tag("td", item.send(attr))
+      content_tag("tbody") do
+        tbodys = "".html_safe
+        table.items.each do |item|
+          tbodys += content_tag("tr") do
+            tds = "".html_safe
+            table.attributes.each do |attr|
+              tds += content_tag("td", item.send(attr))
+            end
+            tds
           end
-          tds
         end
+        tbodys
       end
-      tbodys
     end
 
   end
