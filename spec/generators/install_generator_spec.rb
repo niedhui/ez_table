@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'rails/version'
+require 'generators/easy_table/install_generator'
 require 'ammeter/init'
 describe EasyTable::Generators::InstallGenerator do
 
