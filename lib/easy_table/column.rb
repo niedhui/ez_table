@@ -10,6 +10,14 @@ module EasyTable
       table.model_class.human_attribute_name(name)
     end
 
+    def th_html
+      Config.th_html
+    end
+
+    def td_html
+      Config.td_html
+    end
+
     def value(item, view)
       if value_block
         view.capture(item, &value_block)

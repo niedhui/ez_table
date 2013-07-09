@@ -20,7 +20,7 @@ module EasyTable
         content_tag("tr") do
           ths = "".html_safe
           table.all_columns.each do |column|
-            ths += content_tag("th", column.header(table, view))
+            ths += content_tag("th", column.header(table, view), column.th_html)
           end
           ths
         end
@@ -34,7 +34,7 @@ module EasyTable
           tbodys += content_tag("tr") do
             tds = "".html_safe
             table.all_columns.each do |column|
-              tds += content_tag("td", column.value(item, view))
+              tds += content_tag("td", column.value(item, view), column.td_html)
             end
             tds
           end
