@@ -1,6 +1,6 @@
 module EasyTable
   class Base
-    attr_reader :attributes, :items, :options, :model_class
+    attr_reader :columns, :items, :options, :model_class, :actions_column
     attr_accessor :presenter
 
     delegate :render, to: :presenter
@@ -10,12 +10,20 @@ module EasyTable
     def initialize(items, options = {})
       @items = items
       @options = options
-      @attributes = []
+      @columns = []
       process_options
     end
 
-    def td(attribute)
-      @attributes << attribute
+    def td(name, options = {}, &block)
+      @columns << Column.new(name, options, &block)
+    end
+
+    def actions(&block)
+      @actions_column = ActionsColumn.new("", {}, &block)
+    end
+
+    def all_columns
+      @all_columns ||= (columns + [@actions_column]).compact
     end
 
     # TODO guess model_class from rails controller, should in ActionViewExtension

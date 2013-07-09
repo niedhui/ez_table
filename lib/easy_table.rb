@@ -6,10 +6,10 @@ module EasyTable
   autoload :ActionViewExtension,  'easy_table/action_view_extension'
   autoload :Builder,              'easy_table/builder'
   autoload :Base,                 'easy_table/base'
+  autoload :Column,               'easy_table/column'
+  autoload :ActionsColumn ,       'easy_table/actions_column'
+
   autoload :Presenter,            'easy_table/presenter'
-  module Generators
-    autoload :InstallGenerator, 'easy_table/generators/install_generator'
-  end
 
   def self.config
     EasyTable::Config

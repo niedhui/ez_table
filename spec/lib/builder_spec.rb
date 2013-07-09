@@ -40,6 +40,7 @@ module EasyTable
           table.td :name
         end
       end
+
       before :each do
         User.stub(:human_attribute_name).with(:id).and_return('ID')
         User.stub(:human_attribute_name).with(:name).and_return('名称')
@@ -49,9 +50,26 @@ module EasyTable
         it { should have_xpath("//table/thead/tr/th[text()='ID']")}
         it { should have_xpath("//table/thead/tr/th[text()='名称']")}
       end
-
-
     end
 
+    context " custom column using block" do
+      subject do
+        view.easy_table_for(users) do |table|
+          table.td(:name) {|model| "Hi #{model.name}"  }
+        end
+      end
+      it { should have_xpath("//table/tbody/tr/td[text()='Hi jack']")}
+    end
+
+    context " actions column" do
+      subject do
+        view.easy_table_for(users) do |table|
+          table.td(:name) {|model| "Hi #{model.name}"  }
+          table.actions { |model| view.link_to("View #{model.name}", "")}
+        end
+      end
+      it { should have_xpath("//table/tbody/tr/td/a[text()='View jack']")}
+
+    end
   end
 end

@@ -19,8 +19,8 @@ module EasyTable
       content_tag("thead") do
         content_tag("tr") do
           ths = "".html_safe
-          table.attributes.each do |attr|
-            ths += content_tag("th", table.model_class.human_attribute_name(attr))
+          table.all_columns.each do |column|
+            ths += content_tag("th", column.header(table, view))
           end
           ths
         end
@@ -33,8 +33,8 @@ module EasyTable
         table.items.each do |item|
           tbodys += content_tag("tr") do
             tds = "".html_safe
-            table.attributes.each do |attr|
-              tds += content_tag("td", item.send(attr))
+            table.all_columns.each do |column|
+              tds += content_tag("td", column.value(item, view))
             end
             tds
           end
