@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.email         = ["dianhui.nie@gmail.com"]
   s.homepage      = "http://github.com/niedhui/easy_table"
   s.summary       = "Create Table easily"
-  s.description   = ""
+  s.description   = "Create Table easily for Rails app"
   s.license       = "MIT"
 
   s.files         = `git ls-files`.split($/)
