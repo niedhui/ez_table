@@ -7,7 +7,11 @@ module EasyTable
     end
 
     def header(table, view)
-      table.model_class.human_attribute_name(name)
+      if options[:header].present?
+        options[:header]
+      elsif table.model_class
+        table.model_class.human_attribute_name(name)
+      end
     end
 
     def th_html

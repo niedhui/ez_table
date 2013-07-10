@@ -15,6 +15,10 @@ module EasyTable
       process_options
     end
 
+    def tds(*names)
+      names.each { |name| td(name) }
+    end
+
     def td(name, options = {}, &block)
       @columns << Column.new(name, options, &block)
     end
@@ -27,7 +31,6 @@ module EasyTable
       @all_columns ||= (columns + action_columns)
     end
 
-    # TODO guess model_class from rails controller, should in ActionViewExtension
     def process_options
       @model_class = options[:model_class] || NilModelClass.instance
     end
@@ -35,7 +38,7 @@ module EasyTable
     class NilModelClass
       include Singleton
       def human_attribute_name(attribute)
-        attribute
+        attribute.to_s
       end
     end
 

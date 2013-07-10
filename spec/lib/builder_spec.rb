@@ -1,14 +1,8 @@
 require 'spec_helper'
 module EasyTable
   describe Builder do
-    ::User = Struct.new(:id, :name)
     let(:view) { ActionView::Base.new }
-    let(:users) { [User.new(1,'jack')]}
-
-    before :each do
-      User.stub(:human_attribute_name).with(:id).and_return('ID')
-      User.stub(:human_attribute_name).with(:name).and_return('名称')
-    end
+    let(:users) { [DummyUser.new(1,'jack')]}
 
     subject do
       view.easy_table_for(users) do |table|
@@ -46,7 +40,7 @@ module EasyTable
 
       context "table header" do
         subject do
-          view.easy_table_for(users, model_class: User) do |table|
+          view.easy_table_for(users, model_class: DummyUser) do |table|
             table.td :id
             table.td :name
           end
@@ -56,7 +50,7 @@ module EasyTable
       end
 
       context " guess model class using controller_name" do
-        before { view.stub(:controller_name).and_return('users') }
+        before { view.stub(:controller_name).and_return('dummy_users') }
 
         it { should have_xpath("//table/thead/tr/th[text()='ID']")}
         it { should have_xpath("//table/thead/tr/th[text()='名称']")}

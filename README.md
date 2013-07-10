@@ -9,10 +9,11 @@ TODO
 
   - [ ] I18n header
   - [ ] custom header using options
-  - [ ] guess model_class from current controller
+  - [x] guess model_class from current controller
+  - [x] guess model_class from current controller, with namespace
   - [x] custom column using block
   - [ ] custom column using class
   - [x] add action column
-  - [ ] specify multiple columns using :tds
+  - [x] specify multiple columns using :tds
   - [x] config for action_column
 
