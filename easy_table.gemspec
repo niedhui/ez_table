@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.name          = "easy_table"
   s.version       = EasyTable::VERSION
   s.authors       = ["Dianhui Nie"]
-  s.email         = ["dianhui.nie@gmail.com"]
+  s.email         = ["niedhui@gmail.com"]
   s.homepage      = "http://github.com/niedhui/easy_table"
   s.summary       = "Create Table easily"
   s.description   = "Create Table easily for Rails app"
