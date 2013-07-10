@@ -12,7 +12,7 @@ TODO
   - [ ] guess model_class from current controller
   - [x] custom column using block
   - [ ] custom column using class
-  - [x] add actions column
+  - [x] add action column
   - [ ] specify multiple columns using :tds
-  - [ ] config for actions_column
+  - [x] config for action_column
 

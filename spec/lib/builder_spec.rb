@@ -14,7 +14,7 @@ module EasyTable
       view.easy_table_for(users) do |table|
         table.td :id
         table.td :name
-        table.actions { |model| view.link_to("View #{model.name}", "")}
+        table.action { |model| view.link_to("View #{model.name}", "")}
       end
     end
 
@@ -31,7 +31,7 @@ module EasyTable
 
     context "table config" do
       it { should have_tag("table.easy-table")}
-      it { should have_tag("th.actions")}
+      it { should have_tag("th.action")}
     end
 
     context "no config for table" do
@@ -73,7 +73,7 @@ module EasyTable
       it { should have_xpath("//table/tbody/tr/td[text()='Hi jack']")}
     end
 
-    context " actions column" do
+    context " action column" do
       it { should have_xpath("//table/tbody/tr/td/a[text()='View jack']")}
     end
   end

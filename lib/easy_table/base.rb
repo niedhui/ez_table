@@ -1,6 +1,6 @@
 module EasyTable
   class Base
-    attr_reader :columns, :items, :options, :model_class, :actions_column
+    attr_reader :columns, :items, :options, :model_class, :action_columns
     attr_accessor :presenter
 
     delegate :render, to: :presenter
@@ -8,9 +8,10 @@ module EasyTable
     # options:
     #   model_class: the class of the model, used for i18n, using with the human_attribute_name
     def initialize(items, options = {})
-      @items = items
-      @options = options
-      @columns = []
+      @items          = items
+      @options        = options
+      @columns        = []
+      @action_columns = []
       process_options
     end
 
@@ -18,12 +19,12 @@ module EasyTable
       @columns << Column.new(name, options, &block)
     end
 
-    def actions(&block)
-      @actions_column = ActionsColumn.new("", {}, &block)
+    def action(&block)
+      @action_columns << ActionColumn.new("", {}, &block)
     end
 
     def all_columns
-      @all_columns ||= (columns + [@actions_column]).compact
+      @all_columns ||= (columns + action_columns)
     end
 
     # TODO guess model_class from rails controller, should in ActionViewExtension

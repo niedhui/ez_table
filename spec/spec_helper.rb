@@ -23,7 +23,7 @@ RSpec.configure do |config|
     EasyTable::Engine.initializers.each(&:run)
     EasyTable::Config.configure do |t_config|
       t_config.table_html = { class: 'easy-table table table-bordered' }
-      t_config.actions_th_html = { class: 'actions' }
+      t_config.action_th_html = { class: 'action' }
     end
   end
 

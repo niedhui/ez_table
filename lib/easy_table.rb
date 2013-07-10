@@ -7,7 +7,7 @@ module EasyTable
   autoload :Builder,              'easy_table/builder'
   autoload :Base,                 'easy_table/base'
   autoload :Column,               'easy_table/column'
-  autoload :ActionsColumn ,       'easy_table/actions_column'
+  autoload :ActionColumn ,       'easy_table/action_column'
 
   autoload :Presenter,            'easy_table/presenter'
 
