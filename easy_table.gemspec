@@ -7,7 +7,7 @@ require "easy_table/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name          = "easy_table"
+  s.name          = "nie_easy_table"
   s.version       = EasyTable::VERSION
   s.authors       = ["Dianhui Nie"]
   s.email         = ["niedhui@gmail.com"]
