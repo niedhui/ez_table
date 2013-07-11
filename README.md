@@ -19,10 +19,12 @@ Run the generator:
 rails g easy_table:install
 ```
 
-this will create a initializer file named **easy_table.rb**, which you can
+this will create a initializer file named `easy_table.rb`, which you can
 config some html option for your table
+also `lib/templates/slim/scaffold/index.html.slim` will be created, you
+can modify it to adapt your app
 
-To Start using **easy_table**, you just have to use the easy_table_for helper
+To Start using `easy_table`, you just have to use the easy_table_for helper
 
 ```slim
   = easy_table_for(@users) do |t|
@@ -54,8 +56,8 @@ omitted.
 TODO
 ===============
 
-  - [ ] I18n header
-  - [ ] custom header using options
+  - [x] I18n header
+  - [x] custom header using options
   - [x] guess model_class from current controller
   - [x] guess model_class from current controller, with namespace
   - [x] custom column using block
@@ -63,4 +65,5 @@ TODO
   - [x] add action column
   - [x] specify multiple columns using :tds
   - [x] config for action_column
+  - [ ] config options for single column
 

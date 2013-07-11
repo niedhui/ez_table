@@ -7,6 +7,10 @@ module EasyTable
       def copy_initializer
         template "easy_table.rb", "config/initializers/easy_table.rb"
       end
+
+      def copy_scaffold_template
+        copy_file "scaffold/index.html.slim", "lib/templates/slim/scaffold/index.html.slim"
+      end
     end
   end
 end

@@ -10,4 +10,8 @@ describe EasyTable::Generators::InstallGenerator do
     File.read(file('config/initializers/easy_table.rb')).should =~ /EasyTable::Config.configure/
   end
 
+  it "create index.html.slim on lib" do
+    File.read(file('lib/templates/slim/scaffold/index.html.slim')).should =~ /easy_table_for/
+  end
+
 end
