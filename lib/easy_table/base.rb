@@ -19,8 +19,10 @@ module EasyTable
       names.each { |name| td(name) }
     end
 
+    # TODO: spec & doc for using option
     def td(name, options = {}, &block)
-      @columns << Column.new(name, options, &block)
+      column_class = options[:using] || Column
+      @columns << column_class.new(name, options, &block)
     end
 
     def action(&block)
