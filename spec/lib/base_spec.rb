@@ -10,5 +10,13 @@ module EasyTable
 
     end
 
+    context "td" do
+      it "using custom Column class" do
+        IdColumn = Class.new(Column)
+        subject.td :id, using:IdColumn
+        subject.columns.first.should be_kind_of(IdColumn)
+      end
+    end
+
   end
 end

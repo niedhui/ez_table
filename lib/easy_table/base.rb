@@ -21,7 +21,7 @@ module EasyTable
 
     # TODO: spec & doc for using option
     def td(name, options = {}, &block)
-      column_class = options[:using] || Column
+      column_class = options.delete(:using) || Column
       @columns << column_class.new(name, options, &block)
     end
 

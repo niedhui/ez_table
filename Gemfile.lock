@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    easy_table (0.0.1)
+    nie_easy_table (0.0.1)
       rails (> 3.0.0)
 
 GEM
@@ -132,7 +132,7 @@ GEM
     thread_safe (0.1.0)
       atomic
     tilt (1.4.1)
-    treetop (1.4.14)
+    treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.37)
@@ -145,8 +145,8 @@ PLATFORMS
 DEPENDENCIES
   ammeter
   capybara
-  easy_table!
   hashie
+  nie_easy_table!
   nokogiri
   pry
   pry-debugger
