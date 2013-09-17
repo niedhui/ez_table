@@ -19,7 +19,7 @@ module EasyTable
     end
 
     def td_html
-      Config.td_html
+      options[:td_html] || Config.td_html
     end
 
     def value(item, view)
