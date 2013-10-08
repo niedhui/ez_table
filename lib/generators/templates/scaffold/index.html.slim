@@ -1,6 +1,6 @@
 h1 Listing <%= plural_table_name %>
 
-- easy_table_for <%= plural_table_name %> do |t|
+= easy_table_for <%= plural_table_name %> do |t|
 <% attributes.each do |attribute| -%>
   - t.td :<%= attribute.name %>
 <% end -%>
