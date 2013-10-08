@@ -15,7 +15,7 @@ module EasyTable
     end
 
     def th_html
-      Config.th_html
+      options[:th_html] || Config.th_html
     end
 
     def td_html
