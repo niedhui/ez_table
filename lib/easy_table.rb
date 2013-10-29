@@ -16,4 +16,6 @@ module EasyTable
   end
 end
 
+EZTable = EasyTable
+
 require 'easy_table/engine'

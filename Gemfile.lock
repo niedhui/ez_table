@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nie_easy_table (0.0.1)
+    ez_table (0.0.1)
       rails (> 3.0.0)
 
 GEM
@@ -145,8 +145,8 @@ PLATFORMS
 DEPENDENCIES
   ammeter
   capybara
+  ez_table!
   hashie
-  nie_easy_table!
   nokogiri
   pry
   pry-debugger

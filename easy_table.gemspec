@@ -7,11 +7,11 @@ require "easy_table/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name          = "nie_easy_table"
+  s.name          = "ez_table"
   s.version       = EasyTable::VERSION
   s.authors       = ["Dianhui Nie"]
   s.email         = ["niedhui@gmail.com"]
-  s.homepage      = "http://github.com/niedhui/easy_table"
+  s.homepage      = "http://github.com/niedhui/ez_table"
   s.summary       = "Create Table easily"
   s.description   = "Create Table easily for Rails app"
   s.license       = "MIT"
